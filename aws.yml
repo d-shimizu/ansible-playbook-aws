@@ -1,0 +1,12 @@
+---
+- name: create Amazon Web Services
+  hosts: localhost
+  connection: local
+  gather_facts: False
+  roles:
+    - aws
+  tasks:
+    - name: Refresh inventory
+      meta: refresh_inventory
+  vars_files:
+    - ./roles/aws/vars/main.yml
